@@ -12,6 +12,8 @@ class TaskTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
+    var viewModel: TaskViewModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,10 +23,17 @@ class TaskTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        guard let _viewModel = viewModel else { return }
+        titleLabel.text = selected ? _viewModel.title : _viewModel.title.trunc(length: 20)
+    }
+    
+    override func didMoveToSuperview() {
+        selectionStyle = .none
     }
     
     func configure(viewModel: TaskViewModel) {
-        titleLabel.text = viewModel.title
+        self.viewModel = viewModel
+        titleLabel.text = viewModel.title.trunc(length: 20)
         self.accessoryType = viewModel.completed ? .checkmark : .none
     }
 

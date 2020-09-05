@@ -27,6 +27,9 @@ class ToDoListViewController: UIViewController {
         
         setupBinding()
         
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Filter"
@@ -74,6 +77,11 @@ extension ToDoListViewController: UITableViewDataSource, UITableViewDelegate {
             cell.configure(viewModel: viewModel)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
 

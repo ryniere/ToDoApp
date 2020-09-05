@@ -23,6 +23,7 @@
 		413D0D55250440750093AA5C /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413D0D54250440750093AA5C /* TaskService.swift */; };
 		413D0D59250446C90093AA5C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413D0D58250446C90093AA5C /* TaskTableViewCell.swift */; };
 		413D0D5B250447EC0093AA5C /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413D0D5A250447EC0093AA5C /* TaskViewModel.swift */; };
+		413DEE0A25044F0600B17C82 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413DEE0925044F0600B17C82 /* StringExtension.swift */; };
 		739970F6F949CEC2588556D2 /* Pods_ToDoApp_ToDoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56AE77FB5E7A8439DBB6DA06 /* Pods_ToDoApp_ToDoAppUITests.framework */; };
 		E107A7C82271DD0A9D3A9DE2 /* Pods_ToDoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A654872584E09C27175D466D /* Pods_ToDoAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		413D0D54250440750093AA5C /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
 		413D0D58250446C90093AA5C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		413D0D5A250447EC0093AA5C /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		413DEE0925044F0600B17C82 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		56AE77FB5E7A8439DBB6DA06 /* Pods_ToDoApp_ToDoAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoApp_ToDoAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6677B91D965343A38AD8321D /* Pods-ToDoApp-ToDoAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoApp-ToDoAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ToDoApp-ToDoAppUITests/Pods-ToDoApp-ToDoAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		67452A0A273E11E9D432D816 /* Pods-ToDoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ToDoAppTests/Pods-ToDoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		413D0D152503FB130093AA5C /* ToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				413DEE0825044EE500B17C82 /* Extensions */,
 				413D0D53250440320093AA5C /* Services */,
 				413D0D5025043D080093AA5C /* Enums */,
 				413D0D462503FC040093AA5C /* Scenes */,
@@ -228,6 +231,14 @@
 				413D0D58250446C90093AA5C /* TaskTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		413DEE0825044EE500B17C82 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				413DEE0925044F0600B17C82 /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		502FF4622873D5C64B86B038 /* Frameworks */ = {
@@ -501,6 +512,7 @@
 				413D0D192503FB130093AA5C /* SceneDelegate.swift in Sources */,
 				413D0D59250446C90093AA5C /* TaskTableViewCell.swift in Sources */,
 				413D0D4D2503FCC70093AA5C /* TaskListViewModel.swift in Sources */,
+				413DEE0A25044F0600B17C82 /* StringExtension.swift in Sources */,
 				413D0D5225043D2F0093AA5C /* ToDoFilterEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

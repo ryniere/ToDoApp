@@ -42,7 +42,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXB-IN-vJt">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXB-IN-vJt">
                                                     <rect key="frame" x="25" y="11" width="364" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -51,6 +51,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BXB-IN-vJt" firstAttribute="top" secondItem="VG4-5x-smO" secondAttribute="topMargin" id="65O-Zt-T1m"/>
+                                                <constraint firstAttribute="bottom" secondItem="BXB-IN-vJt" secondAttribute="bottom" constant="11.5" id="J0N-kf-fd2"/>
                                                 <constraint firstItem="BXB-IN-vJt" firstAttribute="leading" secondItem="VG4-5x-smO" secondAttribute="leadingMargin" constant="5" id="Lkz-1x-nPb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="BXB-IN-vJt" secondAttribute="trailing" constant="5" id="ej5-kh-Sab"/>
                                             </constraints>
