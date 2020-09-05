@@ -1,5 +1,5 @@
 //
-//  ToDoListViewModel.swift
+//  ToDo.swift
 //  ToDoApp
 //
 //  Created by Ryniere dos Santos Silva on 2020-09-05.
@@ -9,7 +9,9 @@
 import Foundation
 
 
-
-class ToDoListViewModel {
+struct Task: Codable {
     
+    let id, userId: Int
+    let title: String
+    let completed: Bool
 }

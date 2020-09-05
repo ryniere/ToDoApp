@@ -23,7 +23,7 @@ class TaskService {
         return jsonDecoder
     }()
     
-    public func fetchToDos( successHandler: @escaping (_ response: [ToDo]) -> Void, errorHandler: @escaping(_ error: Error) -> Void) {
+    public func fetchTasks( successHandler: @escaping (_ response: [Task]) -> Void, errorHandler: @escaping(_ error: Error) -> Void) {
         
         guard let urlComponents = URLComponents(string: "\(baseAPIURL)/todos") else {
             errorHandler(ToDoError.invalidEndpoint)
@@ -52,7 +52,7 @@ class TaskService {
             }
             
             do {
-                let todoList = try self.jsonDecoder.decode([ToDo].self, from: data)
+                let todoList = try self.jsonDecoder.decode([Task].self, from: data)
                 DispatchQueue.main.async {
                     successHandler(todoList)
                 }
