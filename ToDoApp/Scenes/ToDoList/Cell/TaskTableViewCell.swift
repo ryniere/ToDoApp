@@ -25,6 +25,7 @@ class TaskTableViewCell: UITableViewCell {
     
     func configure(viewModel: TaskViewModel) {
         titleLabel.text = viewModel.title
+        self.accessoryType = viewModel.completed ? .checkmark : .none
     }
 
 }
