@@ -15,9 +15,9 @@ Go to the project folder in the terminal and run:
 pod install
 ```
 
-Open the ToDoApp.xcworkspace
-Select an iOS simulator
-Press play to run the app
+* Open the ToDoApp.xcworkspace
+* Select an iOS simulator
+* Press play to run the app
 
 
 ## Features
