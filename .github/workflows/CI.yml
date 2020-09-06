@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: xcodebuild -project 'ToDoApp.xcodeproj' -scheme 'ToDoApp' -destination 'platform=iOS Simulator,name=iPhone 8' test
+    - name: Build_App
+      run: xcodebuild -project 'ToDoApp.xcodeproj' -scheme 'ToDoApp' -destination 'generic/platform=iOS' -configuration Release build CODE_SIGNING_ALLOWED=NO
