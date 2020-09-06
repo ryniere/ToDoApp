@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-1188" y="63"/>
         </scene>
-        <!--To Do List View Controller-->
+        <!--Task List View Controller-->
         <scene sceneID="tSx-gN-mve">
             <objects>
-                <viewController id="Cxh-qG-6mf" customClass="ToDoListViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Cxh-qG-6mf" customClass="TaskListViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KZN-I1-XCG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

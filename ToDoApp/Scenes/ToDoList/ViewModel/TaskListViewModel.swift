@@ -24,8 +24,10 @@ class TaskListViewModel {
     }
     
     private let _tasks = BehaviorRelay<[Task]>(value: [])
+    private let _tasksFiltered = BehaviorRelay<[Task]>(value: [])
     private let _isFetching = BehaviorRelay<Bool>(value: false)
     private let _error = BehaviorRelay<String?>(value: nil)
+    
     
     var isFetching: Driver<Bool> {
         return _isFetching.asDriver()
@@ -33,6 +35,10 @@ class TaskListViewModel {
     
     var tasks: Driver<[Task]> {
         return _tasks.asDriver()
+    }
+    
+    var tasksFiltered: Driver<[Task]> {
+        return _tasksFiltered.asDriver()
     }
     
     var error: Driver<String?> {
@@ -47,11 +53,15 @@ class TaskListViewModel {
         return _tasks.value.count
     }
     
-    func viewModelForTask(at index: Int) -> TaskViewModel? {
+    var numberOfFilteredTasks: Int {
+        return _tasksFiltered.value.count
+    }
+    
+    func viewModelForTask(at index: Int, isFiltering:Bool) -> TaskViewModel? {
         guard index < _tasks.value.count else {
             return nil
         }
-        return TaskViewModel(task: _tasks.value[index])
+        return isFiltering ? TaskViewModel(task: _tasksFiltered.value[index]) : TaskViewModel(task: _tasks.value[index])
     }
     
     
@@ -69,6 +79,25 @@ class TaskListViewModel {
             self?._isFetching.accept(false)
             self?._error.accept(error.localizedDescription)
         }
+    }
+    
+    func filterTasks(query:String, taskFilter:TaskFilterEnum = .all) {
+        
+        let tasksTemp = _tasks.value.filter { task -> Bool in
+            
+            switch taskFilter {
+            case .all:
+                 return task.title.lowercased().contains(query.lowercased())
+            case .complete:
+                return task.title.lowercased().contains(query.lowercased()) && task.completed
+            case .incomplete:
+                return task.title.lowercased().contains(query.lowercased()) && !task.completed
+            }
+            
+        }
+        
+        _tasksFiltered.accept(tasksTemp)
+        
     }
     
 }
