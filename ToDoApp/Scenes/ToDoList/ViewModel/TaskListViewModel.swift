@@ -83,18 +83,28 @@ class TaskListViewModel {
     
     func filterTasks(query:String, taskFilter:TaskFilterEnum = .all) {
         
-        let tasksTemp = _tasks.value.filter { task -> Bool in
-            
-            switch taskFilter {
-            case .all:
-                 return task.title.lowercased().contains(query.lowercased())
-            case .complete:
-                return task.title.lowercased().contains(query.lowercased()) && task.completed
-            case .incomplete:
-                return task.title.lowercased().contains(query.lowercased()) && !task.completed
+        var tasksTemp = _tasks.value
+        if !query.isEmpty {
+            tasksTemp = tasksTemp.filter { task -> Bool in
+                return task.title.lowercased().contains(query.lowercased())
             }
-            
         }
+        
+        if taskFilter != .all {
+            tasksTemp = tasksTemp.filter { task -> Bool in
+                
+                switch taskFilter {
+                case .all:
+                     return true
+                case .complete:
+                    return task.completed
+                case .incomplete:
+                    return !task.completed
+                }
+            }
+        }
+        
+         
         
         _tasksFiltered.accept(tasksTemp)
         

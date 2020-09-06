@@ -68,7 +68,7 @@ class TaskListViewController: UIViewController {
     
     var isFiltering: Bool {
       let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
-      return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
+      return searchController.isActive &&  searchBarScopeIsFiltering
     }
     
     
@@ -125,7 +125,6 @@ extension TaskListViewController: UISearchBarDelegate {
         guard let text = searchBar.text, let taskFilter = TaskFilterEnum(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])  else {
             return
         }
-        
         
         viewModel.filterTasks(query: text, taskFilter: taskFilter)
         self.tableView.reloadData()
